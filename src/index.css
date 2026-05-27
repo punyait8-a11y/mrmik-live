@@ -1,0 +1,168 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background gradient animasi */
+.login-page {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.6s ease;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Dark Mode */
+.login-page.dark {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+.login-page.dark .login-left { color: #e2e8f0; }
+.login-page.dark .login-box {
+  background: rgba(30, 41, 59, 0.85);
+  color: #f1f5f9;
+}
+.login-page.dark .login-box input {
+  background: rgba(255,255,255,0.1);
+  color: #f1f5f9;
+  border: 1px solid #475569;
+}
+.login-page.dark .login-btn {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+.login-page.dark .toggle-btn {
+  background: #475569;
+  color: #f1f5f9;
+}
+
+/* Container glassmorphism + fade-in */
+.login-container {
+  display: flex;
+  width: 85%;
+  max-width: 1050px;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 1;
+
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Left Panel */
+.login-left {
+  flex: 1;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-left h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; }
+.login-left p { font-size: 1rem; margin-bottom: 20px; }
+.features div { margin: 8px 0; font-size: 1rem; }
+.icons { margin-top: 25px; font-size: 2rem; display: flex; gap: 20px; }
+.icons span { animation: bounce 2s infinite; }
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Right Panel */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.95);
+}
+
+.login-box {
+  width: 320px;
+  padding: 30px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.login-box .logo { font-size: 2rem; color: #3b82f6; margin-bottom: 10px; }
+.login-box h2 { margin-bottom: 5px; font-size: 1.4rem; }
+.login-box .subtitle { margin-bottom: 20px; color: #666; }
+
+/* Form group vertikal simetris */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-group input,
+.form-group .login-btn {
+  width: 100%;        /* semua elemen sama lebar */
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+.form-group input {
+  border: 1px solid #ccc;
+}
+.form-group .login-btn {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.form-group .login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6),
+              0 0 25px rgba(139, 92, 246, 0.6);
+}
+
+.footer { margin-top: 15px; font-size: 0.8rem; color: #888; font-style: italic; }
+
+.toggle-btn {
+  margin-top: 15px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #e2e8f0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
