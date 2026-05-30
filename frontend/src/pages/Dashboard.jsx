@@ -17,7 +17,7 @@ import {
   FaExclamationTriangle
 } from "react-icons/fa";
 
-import "./../styles/Dashboard.css";
+import "../styles/Dashboard.css";
 
 function Dashboard() {
 
